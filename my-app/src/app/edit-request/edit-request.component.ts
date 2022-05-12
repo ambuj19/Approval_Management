@@ -43,7 +43,7 @@ export class EditRequestComponent implements OnInit {
 
     });
     this.getUsers();
-    this.router.navigate(['/admin']);
+    this.router.navigate(['/my-request']);
   }
   getUsers(){
     this.empService.getrequest().subscribe((response)=>{
@@ -60,7 +60,7 @@ export class EditRequestComponent implements OnInit {
       const id=response['id'];
 
       //this.router.navigate(['details',id])
-     this.router.navigate(['/request'])
+     this.router.navigate(['/my-request'])
 
       this.toastr.success("Request Added")
 

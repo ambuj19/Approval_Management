@@ -33,6 +33,7 @@ export class ApprovalRequestComponent implements OnInit {
 
   ];
   ngOnInit(): void {
+
     this.empForm=this.formBuilder.group({
 
       purpose:['',Validators.required],
@@ -53,7 +54,7 @@ export class ApprovalRequestComponent implements OnInit {
       const id=response['id'];
 
       //this.router.navigate(['details',id])
-     this.router.navigate(['/request'])
+     this.router.navigate(['/my-request'])
 
       this.toastr.success("Request Added")
 

@@ -23,13 +23,13 @@ initiated=true;
   ngOnInit(): void {
     this.empService.getrequest().subscribe(response=>{
       this.data=response;
-      this.toastr.success("Opened");
+
       debugger;
       console.log(this.data);
       this.initiated=true;
     },error=>{
       console.log(error);
-      this.initiated=true;;
+      this.initiated=true;
     })
   }
 
@@ -38,7 +38,7 @@ initiated=true;
     this.empService.deleterequest(id).subscribe(response=>{
       console.log(response);
       this.route.navigate(['/my-request']);
-     // window.location.reload();
+      window.location.reload();
       this.toastr.success("Deleted");
     },(error:any)=>{
       console.log(error);
