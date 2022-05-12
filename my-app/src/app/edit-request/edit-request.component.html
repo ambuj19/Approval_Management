@@ -1,0 +1,64 @@
+
+<br>
+<div class="example-container mat-elevation-z8">
+    <mat-card class="example-card">
+        <form [formGroup]="empForm" (ngSubmit)="update()">
+            <br>
+            <mat-form-field>
+                <input matInput placeholder="Enter Book Id" formControlName="id" [(ngModel)]="user.id">
+
+                <mat-error>
+                    <span *ngIf="!empForm.get('id')?.valid && empForm.get('id')?.touched">Id Required</span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Enter purpose" formControlName="purpose" [(ngModel)]="user.purpose">
+
+                <mat-error>
+                    <span *ngIf="!empForm.get('purpose')?.valid && empForm.get('purpose')?.touched">purpose Required</span>
+                </mat-error>
+            </mat-form-field>
+
+
+            <mat-form-field>
+                <input matInput  formControlName="description" placeholder="Enter description" [(ngModel)]="user.description">
+
+                <mat-error>
+                    <span *ngIf="!empForm.get('description')?.valid && empForm.get('description')?.touched">description Required</span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Enter Approver " formControlName="Approver" [(ngModel)]="user.Approver">
+
+                <mat-error>
+                    <span *ngIf="!empForm.get('Approver')?.valid && empForm.get('Approver')?.touched">Approver Required</span>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput  formControlName="Estimated" placeholder="Enter Estimated" [(ngModel)]="user.Estimated">
+
+                <mat-error>
+                    <span *ngIf="!empForm.get('Estimated')?.valid && empForm.get('Estimated')?.touched"> Estimated Required</span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput  formControlName="Advance" placeholder="Enter Advance" [(ngModel)]="user.Advance">
+
+                <mat-error>
+                    <span *ngIf="!empForm.get('Advance')?.valid && empForm.get('Advance')?.touched"> Advance Required</span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput  formControlName="date" placeholder="Enter date" [(ngModel)]="user.date">
+
+                <mat-error>
+                    <span *ngIf="!empForm.get('date')?.valid && empForm.get('date')?.touched"> date Required</span>
+                </mat-error>
+            </mat-form-field>
+            <div class="button-row">
+                <button mat-flat-button color="primary" type="submit" [disabled]="!empForm.valid"><mat-icon>save</mat-icon></button>
+            </div>
+        </form>
+    </mat-card>
+    </div>

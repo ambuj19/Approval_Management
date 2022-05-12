@@ -1,0 +1,19 @@
+export class request{
+    id:number;
+    purpose:string;
+    description:string;
+    Approver:string;
+    Estimated:Number;
+    Advance:Number;
+    date:string;
+    constructor(id:number,purpose:string,description:string,Approver:string,Estimated:Number,Advance:Number,date:string)
+    {
+        this.id=id;
+        this.purpose=purpose;
+        this.description=description;
+        this.Approver=Approver;
+        this.Estimated=Estimated;
+        this.Advance=Advance;
+        this.date=date;
+    }
+}

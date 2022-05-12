@@ -22,17 +22,28 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatDialogModule} from '@angular/material/dialog';
 import { BudgetApprovalEmiModule } from 'budget-approval-emi';
 import { MatMenuModule} from '@angular/material/menu';
-
+import { MyRequestComponent } from './my-request/my-request.component';
+import { NavComponent } from './shared-module/nav/nav.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RequestService } from './request.service';
+import { ToastrModule } from 'ngx-toastr';
+import { EditRequestComponent } from './edit-request/edit-request.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ApprovalRequestComponent,
-    LoginComponent
+    LoginComponent,
+    MyRequestComponent,
+    NavComponent,
+    EditRequestComponent
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     BrowserModule,
+
+    HttpClientModule,
+    ToastrModule.forRoot(),
     AppRoutingModule,
     BudgetApprovalEmiModule,
     FlexLayoutModule,
@@ -51,9 +62,9 @@ import { MatMenuModule} from '@angular/material/menu';
     MatInputModule,
     MatNativeDateModule,
     MatDialogModule,
-    
+
   ],
-  providers: [],
+  providers: [RequestService,HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
