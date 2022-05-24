@@ -1,0 +1,14 @@
+<h1  mat-dialog-title>Message</h1>
+    <mat-dialog-content >
+        <div >
+
+            <form [formGroup]="myGroup" (ngSubmit)="comments()">
+              <textarea formControlName="description" [(ngModel)]="data.description" style="width: 350px;height: 150px;"></textarea><br><br>
+
+              <button mat-raised-button color="primary" type="submit" >Submit</button>
+
+            </form>
+
+            </div>
+         </mat-dialog-content>
+

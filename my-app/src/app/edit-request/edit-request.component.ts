@@ -22,7 +22,9 @@ export class EditRequestComponent implements OnInit {
     let sub=this.route.params.subscribe(params=>{
       debugger;
       this.val=params['id'];
-    })
+    });
+      // this.val=this.route.snapshot.params['id'];
+      debugger
     console.log(this.val);
     this.empService.getUpdateUser(this.val).subscribe(data=>{
       this.user=data

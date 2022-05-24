@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
-import { request } from './Model/request.model';
+import { request,comment } from './Model/request.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +15,7 @@ export class RequestService {
 
   }
    baseUrl='http://localhost:3000/request';
+   commentURL='http://localhost:3000/comment'
   constructor(private http:HttpClient) { }
   private handleError(errorResponse:HttpErrorResponse)
   {
@@ -52,5 +53,18 @@ export class RequestService {
           debugger;
           return this.http.put<request>(url,user);
 
+        }
+        public approval(id: number, changes:Partial<request>): Observable<request> {
+
+          const url = `${this.baseUrl}/${id}`;
+
+
+          return this.http.put<request>(url,changes)
+
+        }
+        public addcomment(emp:any):Observable<comment>{
+         // const url = `${this.commentURL}/${emp.id}`;
+          debugger;
+          return this.http.post<comment>(this.commentURL,emp);
         }
 }

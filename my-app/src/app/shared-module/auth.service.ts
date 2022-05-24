@@ -17,9 +17,9 @@ export class AuthService {
      this.router.navigate(['/request'])
      //return true;
     }
-    else if(email=='user@123'){
+    else if(email=='admin'){
       this.isAuthenticated=true;
-        this.router.navigate(['/user'])
+        this.router.navigate(['/admin'])
     //  return false;
     }
   }

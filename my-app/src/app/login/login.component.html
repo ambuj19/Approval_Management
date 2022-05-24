@@ -59,16 +59,16 @@
 
   </body> -->
 
-  <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <!-- <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
     <mat-card class="box" style="height: 50%;">
       <mat-card-header id="logo">
         <img src="https://plsadaptive.s3.amazonaws.com/eco/images/partners/FkQ4Xnlu2QJN2sdKKhRVWoBzz7HOepQopycbMu3h.png" alt="logo" width="100%" ><br><br>
-
+ -->
 
              <!-- <mat-card-title style="text-align: right;"> Approval Management </mat-card-title>  -->
 
 
-       </mat-card-header>
+       <!-- </mat-card-header> -->
       <!-- <form class="example-form">
         <mat-card-content>
           <mat-form-field class="example-full-width">
@@ -80,7 +80,7 @@
         </mat-card-content>
         <button mat-stroked-button color="accent" class="btn-block"  (click)="navigation()" >Log in</button>
       </form> -->
-      <form [formGroup]="exform">
+      <!-- <form [formGroup]="exform">
 
         <div class="form-group">
           <label class="col-form-label">Email:</label>
@@ -96,6 +96,37 @@
         <button mat-stroked-button color="accent" class="btn-block" (click)="navigation()">Login</button>
       </form>
     </mat-card>
-  </div>
+  </div> -->
 
   <!-- <lib-BudgetApproval-Emi></lib-BudgetApproval-Emi>  -->
+
+
+  <body class="main-bg">
+    <div class="login-container text-c animated flipInX">
+            <div>
+                <h1 class="logo-badge text-whitesmoke"><span class="fa fa-user-circle"></span></h1>
+            </div>
+            <img
+            src="https://www.euromonitor.com/globalassets/home-page/default-author.png?mode=crop&width=750" alt="Avatar Logo" style="width:50px;"
+            class="rounded-pill"><br>
+                <p class="text-whitesmoke">Approval Management System</p>
+            <div class="container-content">
+                <form [formGroup]="exform" class="margin-t">
+                    <div class="form-group">
+                      <input formControlName="frmemail" name="Email" placeholder="Enter your Email" type="email" class="form-control" [(ngModel)]="emails" required>
+                      <small *ngIf="eform['frmemail'].touched && eform['frmemail'].invalid" class="text-danger" >Email is Required</small>
+                    </div><br>
+                    <div class="form-group">
+                      <input formControlName="frmpassword" type="password" placeholder="Enter your Password" class="form-control" [(ngModel)]="passwords" required >
+                      <small *ngIf="eform['frmpassword'].touched && eform['frmpassword'].invalid" class="text-danger">Password is Required</small>
+                    </div><br>
+                    <button type="submit" class="form-button button-l margin-b" (click)="navigation()">Sign In</button>
+
+                    <a class="text-darkyellow" href="#"><small>Forgot your password?</small></a>
+                    <p class="text-whitesmoke text-center"><small>Do not have an account?</small></p>
+                    <a class="text-darkyellow" href="#"><small>Sign Up</small></a>
+                </form>
+                <p class="margin-t text-whitesmoke"><small>Euromonitor &copy; 2022</small> </p>
+            </div>
+        </div>
+</body>

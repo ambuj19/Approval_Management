@@ -1,0 +1,79 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+    <mat-toolbar fxLayout="row" id="nav" style="background-color:aliceblue;">
+        <span fxFlex><img
+                src="https://plsadaptive.s3.amazonaws.com/eco/images/partners/FkQ4Xnlu2QJN2sdKKhRVWoBzz7HOepQopycbMu3h.png"
+                alt="EMI logo" width="200" height="30"></span>
+        <span class="nav-tool-items" fxHide.xs>
+            <a mat-button [routerLink]="'/request'"> Hi Admin <img
+                    src="https://clipground.com/images/img_avatar-png-2.png" alt="Avatar Logo" style="width:40px;"
+                    class="rounded-pill"> </a>
+            <a mat-button [routerLink]="'/my-request'"> My Request <mat-icon>question_answer</mat-icon> </a>
+            <a mat-button [routerLink]="'/create-account'"> View History <mat-icon>history</mat-icon> </a>
+            <a mat-button [routerLink]="'/accounts'"> Logout <mat-icon>arrow_forward</mat-icon> </a>
+        </span>
+        <button mat-icon-button [matMenuTriggerFor]="dropMenu" fxHide fxShow.xs>
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #dropMenu="matMenu">
+            <ng-container>
+                <button mat-menu-item>
+
+                    <a mat-button [routerLink]="'/request'"> Hi Admin <img
+                            src="https://clipground.com/images/img_avatar-png-2.png" alt="Avatar Logo"
+                            style="width:40px;" class="rounded-pill"> </a><br>
+                </button>
+                <button mat-menu-item>
+                    <a mat-button [routerLink]="'/my-request'"> My Request <mat-icon>question_answer</mat-icon> </a>
+                </button>
+                <button mat-menu-item>
+
+                    <a mat-button [routerLink]="'/create-account'"> View History <mat-icon>history</mat-icon> </a>
+                </button>
+                <button mat-menu-item>
+                    <a mat-button [routerLink]="'/accounts'"> Logout <mat-icon>arrow_forward</mat-icon> </a>
+                </button>
+                <mat-divider></mat-divider>
+            </ng-container>
+        </mat-menu>
+    </mat-toolbar>
+    <div fxLayout="row wrap" fxLayoutGap="16px">
+        <mat-card class="example-card"  *ngFor="let list of data ">
+            <mat-icon style="float: right;"> move_to_inbox </mat-icon>
+            <p>Request Id {{list.id}}</p>
+
+            <mat-card-header>
+                <mat-card-title>Purpose: {{list.purpose}}</mat-card-title>
+                <mat-card-subtitle>
+                    Employee: {{list.Employee}}
+
+                </mat-card-subtitle>
+            </mat-card-header>
+            <p>Estimated Cost: {{list.Estimated}}</p>
+            <p>Advance Amount: {{list.Advance}}</p>
+            <p>
+                Date: {{list.date}}
+            </p>
+            <mat-card-content>
+                <p style="font-style: italic;font-weight: 600;">
+                   Description: {{list.description}}
+                </p>
+
+            </mat-card-content>
+            <mat-card-actions  >
+            <button mat-button   style=
+                "background-color:green;
+                color:white"  data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="approving(list.id,list.purpose,list.description,list.Approver,list.Approved,list.Reject,list.Estimated,list.Advance,list.date)" *ngIf="!list.Approved  ">
+                    Approve Request
+
+                  </button>
+                  <p *ngIf="list.Approved  " style="font-style: italic;font-weight: 400;" >Request Already Approved</p>
+                <button   mat-button style=
+                        "background-color:red;
+                        color:white" *ngIf="!list.Approved" (click)="openDialog(list.id)">
+                    Reject Request
+                </button>
+                <!-- <p *ngIf=" list.Approved " style="font-style: italic;font-weight: 400;" >Request Already Rejected</p> -->
+            </mat-card-actions>
+        </mat-card>
+            </div>

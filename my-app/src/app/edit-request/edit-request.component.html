@@ -21,15 +21,21 @@
 
 
             <mat-form-field>
-                <input matInput  formControlName="description" placeholder="Enter description" [(ngModel)]="user.description">
+                <textarea matInput  formControlName="description" placeholder="Enter description" [(ngModel)]="user.description"></textarea>
 
                 <mat-error>
                     <span *ngIf="!empForm.get('description')?.valid && empForm.get('description')?.touched">description Required</span>
                 </mat-error>
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Enter Approver " formControlName="Approver" [(ngModel)]="user.Approver">
+                <!-- <input matInput placeholder="Enter Approver " formControlName="Approver" [(ngModel)]="user.Approver"> -->
+                <select matNativeControl required  placeholder="Enter Approver " formControlName="Approver" [(ngModel)]="user.Approver">
+                    <option value="0">---</option>
+                    <option value="Mayura">Mayura</option>
+                    <option value="Kaushal">Kaushal</option>
+                    <option value="Nagaraja">Nagaraja</option>
 
+                </select>
                 <mat-error>
                     <span *ngIf="!empForm.get('Approver')?.valid && empForm.get('Approver')?.touched">Approver Required</span>
                 </mat-error>

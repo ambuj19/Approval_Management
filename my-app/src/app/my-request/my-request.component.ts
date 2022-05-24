@@ -5,6 +5,7 @@ import { RequestService } from '../request.service';
 import{ToastrService}from'ngx-toastr'
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormGroup } from '@angular/forms';
+import { MyModalComponent } from '../my-modal/my-modal.component';
 
 @Component({
   selector: 'app-my-request',
@@ -43,5 +44,24 @@ initiated=true;
     },(error:any)=>{
       console.log(error);
     })
+  }
+
+  title = 'angular-material-modals';
+
+  city: string;
+  name: string;
+  food_from_modal: string;
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(MyModalComponent, {
+      width: '400px',
+      data: { name: this.name, animal: this.city }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed', result);
+      this.city = result;
+      this.food_from_modal = result.food;
+    });
   }
 }

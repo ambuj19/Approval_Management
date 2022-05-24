@@ -57,9 +57,9 @@
                     <mat-form-field class="example-full-width">
                         <input matInput placeholder="Enter Request Title" formControlName="purpose">
 
-                        <mat-error>
+                        <!-- <mat-error>
                             <span *ngIf="!empForm.get('purpose')?.valid && empForm.get('purpose')?.touched">purpose Required</span>
-                        </mat-error>
+                        </mat-error> -->
                     </mat-form-field><br>
                     <mat-form-field class="example-full-width">
 
@@ -72,8 +72,9 @@
                     <mat-form-field appearance="fill">
                         <mat-label>Choose your Approver</mat-label>
                         <select matNativeControl required  formControlName="Approver">
-                            <option value="0">---</option>
+
                             <option value="Mayura">Mayura</option>
+                            <option value="Kaushal">Kaushal</option>
                             <option value="Nagaraja">Nagaraja</option>
 
                         </select>
@@ -117,12 +118,12 @@
         </div>
     </div><br><br><br><br>
 
-    <footer>
+    <!-- <div style="margin-top: 200px;">
 
         <font color="black">
             &copy;Reserved 2022</font> <br>
 
         <p align="center">Made with<i class="fa fa-heart red-color"></i>in India</p>
 
-    </footer>
+    </div> -->
 </body>
