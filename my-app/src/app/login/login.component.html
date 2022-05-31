@@ -114,11 +114,11 @@
                 <form [formGroup]="exform" class="margin-t">
                     <div class="form-group">
                       <input formControlName="frmemail" name="Email" placeholder="Enter your Email" type="email" class="form-control" [(ngModel)]="emails" required>
-                      <small *ngIf="eform['frmemail'].touched && eform['frmemail'].invalid" class="text-danger" >Email is Required</small>
+                      <small *ngIf="eform['frmemail'].touched && eform['frmemail'].invalid" style="color: white;" >Email is Required</small>
                     </div><br>
                     <div class="form-group">
                       <input formControlName="frmpassword" type="password" placeholder="Enter your Password" class="form-control" [(ngModel)]="passwords" required >
-                      <small *ngIf="eform['frmpassword'].touched && eform['frmpassword'].invalid" class="text-danger">Password is Required</small>
+                      <small *ngIf="eform['frmpassword'].touched && eform['frmpassword'].invalid" style="color: white;">Password is Required</small>
                     </div><br>
                     <button type="submit" class="form-button button-l margin-b" (click)="navigation()">Sign In</button>
 
