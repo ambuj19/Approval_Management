@@ -31,7 +31,7 @@ export class EditRequestComponent implements OnInit {
 
     })
     this.empForm=this.formBuilder.group({
-      id:['',Validators.required],
+
       purpose:['',Validators.required],
       description:['',Validators.required],
       Approver:['',Validators.required],
